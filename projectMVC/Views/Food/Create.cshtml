@@ -1,0 +1,51 @@
+﻿@model projectMVC.viewModel.FoodViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Food</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+
+        @Html.LabelFor(d => d.Name)
+        @Html.TextBoxFor(d => d.Name, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(d => d.Name)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(d => d.Buy)
+        @Html.TextBoxFor(d => d.Buy, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(d => d.Buy)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(d => d.Sale)
+        @Html.TextBoxFor(d => d.Sale, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(d => d.Sale)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(d => d.Profit)
+        @Html.TextBoxFor(d => d.Profit, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(d => d.Profit)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(d => d.Amonut)
+        @Html.TextBoxFor(d => d.Amonut, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(d => d.Amonut)
+    </div>
+
+
+
+
+    <button type="submit"> Add Food </button>
+}
+

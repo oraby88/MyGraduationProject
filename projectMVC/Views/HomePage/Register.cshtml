@@ -1,0 +1,58 @@
+﻿@model projectMVC.viewModel.RegisterAdmin
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand text-uppercase  " href="#"> free <span class="text-info"> sms</span> </a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+            <a class="nav-link text-uppercase" href="@Url.Action("Index" , "HomePage")">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-uppercase" href="@Url.Action("LoginAdmin" , "HomePage")"> login Admin </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-uppercase" href="@Url.Action("LoginUser" , "HomePage")">  Login User  </a>
+        </li>
+
+    </ul>
+
+</nav>
+<h2>Register</h2>
+
+<div class="container d-flex align-items-center justify-content-center test  ">
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+
+            @Html.LabelFor(a => a.AdminUserName)
+            @Html.TextBoxFor(a => a.AdminUserName, new { @class = "form-controller" })
+            @Html.ValidationMessageFor(a => a.AdminUserName)
+        </div>
+        <div class="form-group">
+
+            @Html.LabelFor(a => a.AdminPassword)
+            @Html.PasswordFor(a => a.AdminPassword, new { @class = "form-controller" })
+            @Html.ValidationMessageFor(a => a.AdminPassword)
+        </div>
+        <div class="form-group">
+
+            @Html.LabelFor(a => a.Code)
+            @Html.TextBoxFor(a => a.Code, new { @class = "form-controller" })
+            @Html.ValidationMessageFor(a => a.Code)
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(a => a.BussinesType)
+            @Html.DropDownListFor(a => a.BussinesType, new SelectList(Enum.GetValues(typeof(projectMVC.enums.BussinessType))), new { @class = "form-controller" })
+            @Html.ValidationMessageFor(a => a.BussinesType)
+        </div>
+        <button type="submit"> Register </button>
+
+    }
+    </div>

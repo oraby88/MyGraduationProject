@@ -1,0 +1,49 @@
+﻿@model projectMVC.viewModel.CasherViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Casher</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(e => e.Id)
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Name)
+        @Html.TextBoxFor(e => e.Name, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Name)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Phone)
+        @Html.TextBoxFor(e => e.Phone, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Phone)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Adress)
+        @Html.TextBoxFor(e => e.Adress, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Adress)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Salary)
+        @Html.TextBoxFor(e => e.Salary, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Salary)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.CasherUserName)
+        @Html.TextBoxFor(e => e.CasherUserName, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.CasherUserName)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.CasherPassword)
+        @Html.TextBoxFor(e => e.CasherPassword, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.CasherPassword)
+    </div>
+    <button type="submit"> Save Changing </button>
+}

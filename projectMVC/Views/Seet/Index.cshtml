@@ -1,0 +1,44 @@
+﻿@model IEnumerable<projectMVC.viewModel.SeetsViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@if (ViewBag.type == projectMVC.enums.BussinessType.Coffie)
+{
+    @Html.Partial("_AdminCoffie")
+}
+else
+{
+    @Html.Partial("_AdminWorkspace")
+
+}
+
+<h1> @Html.ActionLink("Create New Seet", "Create") </h1>
+
+<table class="table">
+
+    <tr>
+        <td> Number </td>
+        <td> Cost </td>
+        <td> Type </td>
+        <td> Edit Seet </td>
+        <td> Delete Seet </td>
+
+    </tr>
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td>@item.Number </td>
+            <td> @item.Cost </td>
+            <td> @item.SeetType </td>
+
+            <td>@Html.ActionLink("Edit Seet", "Edit", new { id = item.ID }) </td>
+
+            <td>@Html.ActionLink("Delete Seet", "Delete", new { id = item.ID }) </td>
+        </tr>
+    }
+</table>

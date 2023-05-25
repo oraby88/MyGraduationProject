@@ -1,0 +1,33 @@
+﻿@model projectMVC.viewModel.SeetsViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Seet</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+
+        @Html.LabelFor(s => s.Number)
+        @Html.TextBoxFor(a => a.Number, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(a => a.Number)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(a => a.Cost)
+        @Html.TextBoxFor(a => a.Cost, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(a => a.Cost)
+    </div>
+
+
+    <div class="form-group">
+
+        @Html.LabelFor(a => a.SeetType)
+        @Html.DropDownListFor(a => a.SeetType, new SelectList(Enum.GetValues(typeof(projectMVC.enums.SeetType))), new { @class = "form-controller" })
+        @Html.ValidationMessageFor(a => a.SeetType)
+    </div>
+    <button type="submit"> Add Seets </button>
+
+}

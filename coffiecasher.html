@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Casher bord </title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand text-uppercase  " href="#"> free <span class="text-info"> sms</span> </a>
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link text-uppercase active"> welcom casher name </a>
+            </li>
+          
+        
+          </ul>
+      </nav>
+
+      <div class="container-fluid">
+
+        <div class="row text-center mt-3">
+            <div class="col-12 col-md-9  " >
+                <h2> menue  </h2>
+                <hr>
+                <div class="row p-3">
+                    <h2 class="col-12"> foods   </h2>
+                    <button class="col-3 bg-success text-light mb-1 x"  value="100" data="meet" > meet   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x" value="90"  data="fish"> fish   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="80"   data="birger"> birger  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="60" data="bizze" > bizze   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="50"  data="checken"> checken  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="70"  data="tomatoo"> tomatoo   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="50"  data= "salad">salad    </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="30"  data="steak"> steak  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="40" data=" tuna steak" > tuna steak  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="70"  data="sandwich"> sandwich   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="70" >shrimp  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="30" > shob  </button> 
+                </div>
+                <div class="row p-3">
+                    <h2 class="col-12">  drinks    </h2>
+                    <button class="col-3 bg-success text-light mb-1 x"  value="100" data="Hanky Panky"> Hanky Panky </button> 
+                    <button class="col-3 bg-success text-light mb-1 x " value="90"data="Zombie" > Zombie  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="80" data="Cosmopolitan"> Cosmopolitan   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="60" data=" El Diablo"> El Diablo  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="50" data="White Lady" >  White Lady</button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="70"  data=" s1"> s1   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="50" data="rum" > rum   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="30" data="s3" > s3   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="40"  data="s2"> s2   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="70" data="tea" > tea   </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="70" data="s4" > s4  </button> 
+                    <button class="col-3 bg-success text-light mb-1 x"value="30" data="coffie" > coffie   </button> 
+             
+                </div>
+                <div class="row p-3">
+                    <input type="text" class="col-9" placeholder="amount" id="amount"  >
+                    <button class="btn btn-outline-success  col-3" id="add"> Add </button>
+                </div>
+            </div>
+            <div class="col-12 col-md-3" > 
+                <h2> the bill </h2>
+                <hr>
+                <div id="billdata">
+                            <div class="row border-bottom mb-3 " id="header">
+                                <div class="col-3"> <h2 class="small"> name </h2> </div>
+                                <div class="col-3"> <h2  class="small"> price </h2> </div>
+                                <div class="col-3"> <h2  class="small"> amount </h2> </div>
+                                <div class="col-3"> <h2  class="small"> total price  </h2> </div>
+                            </div>
+                         
+            </div>
+                <div class="row border-bottom ">
+                    <div class="col-6"> <h2 class="text-capitalize" > total </h2> </div>
+                    <div class="col-6"> <h2  id="result"> 0 </h2> </div>
+                    <button id="remove" class="col-12 btn btn-block btn-danger text-capitalize"> empty bill </button>
+                    
+                </div>
+
+            </div>
+
+        </div>
+      </div>
+     <script src="js/jquery-3.4.1.slim.min.js"></script>
+      <script>
+          $(document).ready(function(){
+            
+              let name="";let price=0; let amount=0; let totalPrice=0;
+
+
+            $(".x").click(function( event ) {
+                
+              
+
+                 price = Number( $(this).attr("value"));
+                
+
+                 price =  Number(  $(this).attr("value") )
+
+                 name =   $(this).text();
+                
+
+            
+            });
+
+            $("#add").click(function(){
+
+                amount =  Number( $("#amount").val());
+                totalPrice = amount * price;
+                console.log(price)
+                let row = `
+                <div class="row border-bottom mb-3 removed">
+                                <div class="col-3"> <h2 class="small"> ${name} </h2> </div>
+                                <div class="col-3"> <h2  class="small"> ${price} </h2> </div>
+                                <div class="col-3"> <h2  class="small"> ${amount} </h2> </div>
+                                <div class="col-3"> <h2  class="small"> ${totalPrice}  </h2> </div>
+                </div>
+                
+                `;
+                $("#billdata").append(row);
+                $("#amount").val("")
+                $("#result").text( Number($("#result").text()) + totalPrice );
+
+            });
+            $("#remove").click(function(){
+
+                $(".removed").remove();
+                $("#result").text(0);
+
+
+            });
+
+           
+
+          })
+
+</script>
+
+</body>
+</html>

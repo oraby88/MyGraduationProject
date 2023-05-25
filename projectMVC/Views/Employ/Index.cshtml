@@ -1,0 +1,48 @@
+﻿@model IEnumerable<projectMVC.viewModel.EmployeViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (ViewBag.type == projectMVC.enums.BussinessType.Coffie)
+{
+    @Html.Partial("_AdminCoffie")
+}
+else
+{
+    @Html.Partial("_AdminWorkspace")
+
+}
+
+<h1> @Html.ActionLink("Create New Employe", "Create") </h1>
+
+
+<table class="table">
+
+    <tr>
+        <td> Name </td>
+        <td> Phone </td>
+        <td> Salary </td>
+        <td> Job </td>
+        <td> Adress </td>
+        <td> Edit Employe </td>
+
+        <td> Delete Employe</td>
+
+    </tr>
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td>@item.Name </td>
+            <td> @item.Phone </td>
+            <td> @item.Salary </td>
+            <td> @item.Job </td>
+            <td> @item.Adress </td>
+            <td>@Html.ActionLink("Edit Employe", "Edit", new { id = item.Id }) </td>
+
+            <td>@Html.ActionLink("Delete Employe", "Delete", new { id = item.Id }) </td>
+        </tr>
+    }
+</table>

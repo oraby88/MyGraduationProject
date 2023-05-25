@@ -1,0 +1,50 @@
+body {
+    background-color: #333;
+}
+.navbar {
+
+    border-bottom:  3px solid #007bff ;
+}
+
+
+.navbar-brand
+ {
+    margin-bottom: 4px;
+    border-right: 2px solid #007bff ;
+    padding-right: 25px;
+ }
+ .carousel-caption  {
+     margin-bottom: 8rem;
+     background-color:rgba(230, 218, 218, 0.795);
+     color: #333;
+
+ }
+
+
+ .jumbotron {
+     border: none;
+ }
+
+ .custom-img {
+     height: 600px;
+ }
+.list-group {
+    padding-top: 5rem;
+}
+
+.removePadding {
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer{
+    background-color: rgb(14, 12, 12);
+    padding: 10px 0px ;
+    text-align: center;
+}
+.footer h3 {
+    padding: 5px ;
+    border-top: 1px solid #ddd ;
+    border-bottom: 1px solid #ddd ;
+
+}

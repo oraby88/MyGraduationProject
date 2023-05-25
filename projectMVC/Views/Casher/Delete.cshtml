@@ -1,0 +1,27 @@
+﻿@model projectMVC.viewModel.CasherViewModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Casher</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(c => c.Id)
+    <h2>   @Model.Name</h2>
+    <h2>   @Model.Phone</h2>
+    <h2>   @Model.Salary</h2>
+    <h2>   @Model.Adress</h2>
+    <h2>   @Model.CasherUserName</h2>
+
+    <h2>   @Model.CasherUserName</h2>
+    <h2>   @Model.CasherPassword</h2>
+
+
+
+    <button type="submit"> delete Casher</button>
+    @Html.ActionLink("Cancel", "index")
+}
+

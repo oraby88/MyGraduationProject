@@ -1,0 +1,18 @@
+﻿@model projectMVC.viewModel.SeetsViewModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Seet</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(e => e.ID)
+    <h2>   @Model.Number </h2>
+    <h2>   @Model.Cost</h2>
+    <h2>   @Model.SeetType</h2>
+
+
+    <button type="submit"> delete </button>
+    @Html.ActionLink("Cancel", "index")
+}

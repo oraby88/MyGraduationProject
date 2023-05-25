@@ -1,0 +1,42 @@
+﻿@model projectMVC.viewModel.EmployeViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Employee</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Name)
+        @Html.TextBoxFor(e => e.Name, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Name)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Phone)
+        @Html.TextBoxFor(e => e.Phone, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Phone)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Job)
+        @Html.TextBoxFor(e => e.Job, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Job)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Adress)
+        @Html.TextBoxFor(e => e.Adress, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Adress)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(e => e.Salary)
+        @Html.TextBoxFor(e => e.Salary, new { @class = "form-controller" })
+        @Html.ValidationMessageFor(e => e.Salary)
+    </div>
+    <button type="submit"> Add Employe </button>
+}

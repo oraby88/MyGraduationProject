@@ -1,0 +1,33 @@
+﻿@model projectMVC.viewModel.FoodAndDrinksCasher
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h1> food </h1>
+<div class="container ">
+    <div class="row">
+        @foreach (var item in Model.foods)
+        {
+            <div class="col-lg-3">
+                @item.Name
+                <button class="btn"> @item.Sale </button>
+
+            </div>
+        }
+    </div>
+</div>
+
+<h1> Drinks </h1>
+<div class="container ">
+    <div class="row">
+        @foreach (var item in Model.drinks)
+        {
+            <div class="col-lg-3">
+                @item.Name
+                <button class="btn"> @item.Sale </button>
+
+            </div>
+        }
+    </div>
+</div>
